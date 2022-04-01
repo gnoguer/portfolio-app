@@ -1,14 +1,14 @@
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
 import Login from "./components/Login";
 
 function App() {
-    return (
-        <div className="bg-neutral-50">
-             <Login/>
-             
-        </div>
-    );
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    if (!loggedIn) {
+        return <Login setLoggedIn={setLoggedIn} />;
+    } else {
+    }
 }
 
 export default App;
