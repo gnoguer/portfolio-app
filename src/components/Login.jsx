@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth, logInWithEmailAndPassword } from "../firebase";
+import { logInWithEmailAndPassword } from "../firebase";
 
 function Login(props) {
     const [userData, setUserData] = useState({
@@ -22,11 +22,9 @@ function Login(props) {
                 userData.username,
                 userData.password
             );
-            console.log(userCredential);
 
-            if (userCredential != undefined) {
+            if (userCredential !== undefined) {
                 props.setLoggedIn(true);
-                console.log(props.loggedIn);
             }
         } catch {
             console.log(props.loggedIn);
@@ -35,18 +33,15 @@ function Login(props) {
     };
 
     return (
-        <div class="grid place-items-center h-screen p-4">
-            <div class="w-full max-w-xs">
-                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div class="mb-4">
-                        <label
-                            class="block text-gray-700 text-sm font-bold mb-2"
-                            for="username"
-                        >
+        <div className="grid place-items-center h-screen p-4">
+            <div className="w-full max-w-xs">
+                <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2">
                             Usuari
                         </label>
                         <input
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="username"
                             type="text"
                             placeholder="Usuari"
@@ -54,15 +49,12 @@ function Login(props) {
                             name="username"
                         />
                     </div>
-                    <div class="mb-6">
-                        <label
-                            class="block text-gray-700 text-sm font-bold mb-2"
-                            for="password"
-                        >
+                    <div className="mb-6">
+                        <label className="block text-gray-700 text-sm font-bold mb-2">
                             Contrasenya
                         </label>
                         <input
-                            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             id="password"
                             type="password"
                             placeholder="******************"
@@ -70,9 +62,9 @@ function Login(props) {
                             name="password"
                         />
                     </div>
-                    <div class="flex justify-center">
+                    <div className="flex justify-center">
                         <button
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             onClick={handleOnSubmit}
                         >
                             Log in
